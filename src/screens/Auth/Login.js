@@ -18,8 +18,8 @@ import { colors } from '../../style';
 
 
 const Login = (props) => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('test@test.com')
+    const [password, setPassword] = useState('123456')
 
     const animation = useRef(new Animated.Value(0)).current;
 
@@ -28,7 +28,6 @@ const Login = (props) => {
     useEffect(() => {
         Keyboard.addListener("keyboardWillShow", _keyboardWillShow);
         Keyboard.addListener("keyboardWillHide", _keyboardWillHide);
-
 
         return () => {
             Keyboard.removeListener("keyboardWillShow", _keyboardWillShow);
@@ -67,7 +66,6 @@ const Login = (props) => {
 
                     <Input
                         placeholder={'Telefoni e-posta veya kullanıcı adı'}
-                        showRightIcon
                         value={email}
                         onChangeText={(email) => setEmail(email)}
                     />
@@ -75,7 +73,6 @@ const Login = (props) => {
                     <Input
                         placeholder={'Şifre'}
                         secureTextEntry
-                        showRightIcon={false}
                         value={password}
                         onChangeText={(password) => setPassword(password)}
                     />
@@ -112,13 +109,12 @@ const Login = (props) => {
                 <Button
                     text={'Giriş yap'}
                     onPress={() => {
-
+                        const params = { email, password }
+                        props.login(params)
                     }}
                     style={{ width: '25%', height: 30 }}
                 />
             </Animated.View>
-
-
 
         </SafeAreaView>
     )

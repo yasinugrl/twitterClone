@@ -36,7 +36,7 @@ const FirstScreen = (props) => {
                 <Button
                     text={'Hesap Oluştur'}
                     onPress={() => {
-
+                        props.navigation.navigate('Register')
                     }}
                 />
             </View>

@@ -39,13 +39,16 @@ function Router(props) {
                 />
 
 
-                {/* <Stack.Screen
+                <Stack.Screen
                     name="Register"
                     component={Register}
-                    options={{ title: 'Register' }}
+                    options={{ 
+                        title: 'Register',
+                        headerShown: false  
+                    }}
                 />
 
-
+                {/* 
                 <Stack.Screen
                     name="Home"
                     component={Home}
