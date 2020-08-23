@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, ActivityIndicator } from 'react-native';
 import { Input, Button } from '../../components'
 import { Icon } from 'native-base'
+import auth from '@react-native-firebase/auth';
 
 import { connect } from 'react-redux';
-import { login } from '../../actions'
+import { isUser } from '../../actions'
 import * as RootNavigation from '../../RootNavigation';
 import { colors } from '../../style';
 
@@ -12,9 +13,16 @@ import { colors } from '../../style';
 
 const FirstScreen = (props) => {
     useEffect(() => {
-
+       props.isUser()
     }, [])
 
+    if(props.loading) {
+        return(
+            <View style={{ flex:1 , alignItems: 'center', justifyContent: 'center'}}>
+                <ActivityIndicator size='large' />
+            </View>
+        )
+    }
     return (
         <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '' }}>
 
@@ -55,4 +63,4 @@ const mapStateToProps = ({ authResponse }) => {
     return { loading, user };
 };
 
-export default connect(mapStateToProps, { login })(FirstScreen);
+export default connect(mapStateToProps, { isUser })(FirstScreen);

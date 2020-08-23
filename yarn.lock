@@ -1174,6 +1174,19 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-9.0.0.tgz#b7b211ba6555365a83355b92df825f857908c653"
   integrity sha512-2W0abJCOsXJNfCgaKmXPcpPQgV/MZKC5KVQOufGMYAOMytc8EFIqGhv7S9b9tqR0dYYkZUryPX6w+IvI9G4aIQ==
 
+"@react-native-firebase/firestore@^7.5.3":
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-7.5.3.tgz#6659ed53e9cea0ab0d83d24feea304d62698cc81"
+  integrity sha512-SX6Z89O4VilW5oU7oGTQScMjGb978Jp+JtWARBbbx+pB7RfCVOfd8LqJYHZKvJVz/ucd+8RGD7cdT+C5R7h0oQ==
+
+"@react-navigation/bottom-tabs@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.8.0.tgz#d7386809bceeead0adcaacf61b6563be9cefd5cb"
+  integrity sha512-geF/FSIg6cArY5jLwJJZrp7PDzLoSrONkCgq9n/4yKxtQapB/Pn5ljSHCNRGNkkb/+g8zqRQmEL5yX4DOja0OA==
+  dependencies:
+    color "^3.1.2"
+    react-native-iphone-x-helper "^1.2.1"
+
 "@react-navigation/core@^5.12.3":
   version "5.12.3"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.12.3.tgz#0484fcca290569a0dc10b70b99f00edd3f1fd93c"
@@ -1185,6 +1198,14 @@
     query-string "^6.13.1"
     react-is "^16.13.0"
     use-subscription "^1.4.0"
+
+"@react-navigation/drawer@^5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-5.9.0.tgz#e8813df2f1aa5694521c1a46c88d0b42c50fbe6c"
+  integrity sha512-YcuJ9QD4cFyjfXJx6vMsG3u3bfOU/Nt+GvMMl+4rZOxw2LStmubY1jqfsEAli/+dTUHv5kXJf5dF+/GhUCqA5g==
+  dependencies:
+    color "^3.1.2"
+    react-native-iphone-x-helper "^1.2.1"
 
 "@react-navigation/native@^5.7.3":
   version "5.7.3"

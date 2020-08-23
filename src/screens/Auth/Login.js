@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import {
     Text, View, ScrollView,
     SafeAreaView, Animated, Keyboard
@@ -100,7 +100,6 @@ const Login = (props) => {
                                 translateY: animation,
                             }
                         ]
-
                     }
                     ]
                 }>
@@ -108,6 +107,7 @@ const Login = (props) => {
 
                 <Button
                     text={'Giriş yap'}
+                    loading={props.loading}
                     onPress={() => {
                         const params = { email, password }
                         props.login(params)

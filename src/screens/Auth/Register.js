@@ -19,9 +19,9 @@ import { colors } from '../../style';
 
 const Register = (props) => {
 
-    const [name, setName] = useState('test 2')
-    const [username, setUsername] = useState('test2')
-    const [email, setEmail] = useState('test2@test.com')
+    const [name, setName] = useState('test')
+    const [username, setUsername] = useState('test1')
+    const [email, setEmail] = useState('test@test.com')
     const [password, setPassword] = useState('123456')
 
     const animation = useRef(new Animated.Value(0)).current;

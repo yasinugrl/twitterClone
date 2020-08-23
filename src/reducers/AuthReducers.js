@@ -7,6 +7,7 @@ import {
     REGISTER_SUCCESS,
     REGISTER_FAILD,
 
+    SIGN_OUT_SUCCESS
 
 } from '../actions/types';
 
@@ -38,6 +39,12 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 loading: false,
+            };
+
+        case SIGN_OUT_SUCCESS:
+            return {
+                ...state,
+                user: null,
             };
 
 

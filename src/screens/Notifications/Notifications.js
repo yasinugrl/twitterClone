@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { getList, removeData } from '../../actions'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Home = (props) => {
+const Notifications = (props) => {
 
     useEffect(() => {
     }, [])
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text onPress={() => props.navigation.navigate('HomeDetail')}>Home screen</Text>
+            <Text onPress={() => props.navigation.navigate('NotificationDetail')}>Notifications screen</Text>
         </View>
     );
 }
@@ -29,4 +29,4 @@ const mapStateToProps = ({ charactersResponse }) => {
     return { loadingCharacter, characters };
 };
 
-export default connect(mapStateToProps, { getList, removeData })(Home);
+export default connect(mapStateToProps, { getList, removeData })(Notifications);

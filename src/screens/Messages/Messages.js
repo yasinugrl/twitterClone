@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, Alert } from 'react-native';
 import { connect } from 'react-redux';
-
-import { getList, removeData } from '../../actions'
+import { signOut} from '../../actions'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Home = (props) => {
+const Messages = (props) => {
 
     useEffect(() => {
     }, [])
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text onPress={() => props.navigation.navigate('HomeDetail')}>Home screen</Text>
+            <Text onPress={() => {
+                // props.navigation.navigate('MessageDetail')
+                props.signOut()
+                
+            }}>Messages screen</Text>
         </View>
     );
 }
@@ -29,4 +32,4 @@ const mapStateToProps = ({ charactersResponse }) => {
     return { loadingCharacter, characters };
 };
 
-export default connect(mapStateToProps, { getList, removeData })(Home);
+export default connect(mapStateToProps, { signOut })(Messages);
