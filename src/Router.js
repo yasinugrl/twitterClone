@@ -58,6 +58,42 @@ const menu = (navigation) => {
 
 const AuthStack = createStackNavigator();
 
+const AuthStackScreen = () => {
+    return (
+        <AuthStack.Navigator initialRouteName='FirstScreen'>
+            <AuthStack.Screen
+                name="FirstScreen"
+                component={FirstScreen}
+                options={({ navigation, route }) => ({
+                    title: 'Login',
+                    headerShown: false
+                })}
+
+            />
+
+            <AuthStack.Screen
+                name="Login"
+                component={Login}
+                options={({ navigation, route }) => ({
+                    title: 'Login',
+                    headerShown: false
+                })}
+            />
+
+
+            <AuthStack.Screen
+                name="Register"
+                component={Register}
+                options={{
+                    title: 'Register',
+                    headerShown: false
+                }}
+            />
+
+        </AuthStack.Navigator>
+    )
+}
+
 
 const HomeStack = createStackNavigator();
 const HomeStackScreen = () => {
@@ -142,50 +178,41 @@ const TabStackScreen = () => {
 }
 
 const DrawerStack = createDrawerNavigator();
+const DrawerStackScreen = () => {
+    return (
+        <DrawerStack.Navigator>
+            <DrawerStack.Screen name="Drawer" component={TabStackScreen} />
+        </DrawerStack.Navigator>
+    )
+}
+
+
+const RootStack = createStackNavigator();
 
 
 function Router(props) {
     return (
-            <NavigationContainer ref={navigationRef}>
+        <NavigationContainer ref={navigationRef}>
+            <RootStack.Navigator headerMode='none'>
                 {
-                    !props.user ?
-                        <AuthStack.Navigator initialRouteName='FirstScreen'>
-                            <AuthStack.Screen
-                                name="FirstScreen"
-                                component={FirstScreen}
-                                options={({ navigation, route }) => ({
-                                    title: 'Login',
-                                    headerShown: false
-                                })}
-
-                            />
-
-                            <AuthStack.Screen
-                                name="Login"
-                                component={Login}
-                                options={({ navigation, route }) => ({
-                                    title: 'Login',
-                                    headerShown: false
-                                })}
-                            />
-
-
-                            <AuthStack.Screen
-                                name="Register"
-                                component={Register}
-                                options={{
-                                    title: 'Register',
-                                    headerShown: false
-                                }}
-                            />
-
-                        </AuthStack.Navigator> :
-
-                        <DrawerStack.Navigator>
-                            <DrawerStack.Screen name="Drawer" component={TabStackScreen} />
-                        </DrawerStack.Navigator>
+                    props.user ?
+                        (<RootStack.Screen
+                            name="Main"
+                            component={DrawerStackScreen}
+                            options={{
+                                animationEnabled: false
+                            }}
+                        />) :
+                        (<RootStack.Screen
+                            name="Auth"
+                            component={AuthStackScreen}
+                            options={{
+                                animationEnabled: false
+                            }}
+                        />)
                 }
-            </NavigationContainer>
+            </RootStack.Navigator>
+        </NavigationContainer>
     );
 }
 
@@ -195,4 +222,4 @@ const mapStateToProps = ({ authResponse }) => {
     return { loading, user };
 };
 
-export default connect(mapStateToProps, {  })(Router);
+export default connect(mapStateToProps, {})(Router);
