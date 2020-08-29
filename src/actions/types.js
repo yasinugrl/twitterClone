@@ -36,6 +36,20 @@ export const REMOVE_ITEM_SUCCESS = 'remove_item_success';
 export const REMOVE_ITEM_FAILD = 'remove_item_faild';
 
 
+export const ADD_TWEET_START = 'add_tweet_start';
+export const ADD_TWEET_SUCCESS = 'add_tweet_success';
+export const ADD_TWEET_FAILD = 'add_tweet_faild';
+
+
+export const GET_TWEET_START = 'get_tweet_start';
+export const GET_TWEET_SUCCESS = 'get_tweet_success';
+export const GET_TWEET_FAILD = 'get_tweet_faild';
+
+export const GET_USER_TWEET_START = 'get_user_tweet_start';
+export const GET_USER_TWEET_SUCCESS = 'get_user_tweet_success';
+export const GET_USER_TWEET_FAILD = 'get_user_tweet_faild';
+
+
 export const LOCAL_AUTH_ID = 'local_auth_id';
 
 

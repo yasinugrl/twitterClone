@@ -31,6 +31,12 @@ import MessagesScreen from './screens/Messages/Messages'
 import MessageDetail from './screens/Messages/MessageDetail'
 
 
+import Menu from './screens/Menu/Menu'
+
+
+import AddTweet from './screens/Tweets/AddTweet'
+
+
 import { navigationRef } from './RootNavigation';
 import AsyncStorage from '@react-native-community/async-storage';
 import { LOCAL_AUTH_ID, USER } from './actions/types';
@@ -38,6 +44,7 @@ import FirstScreen from './screens/Auth/FirstScreen';
 import Notifications from './screens/Notifications/Notifications';
 import { Icon } from 'native-base';
 import { connect } from 'react-redux';
+import { colors } from './style';
 
 
 
@@ -168,11 +175,36 @@ const TabStack = createBottomTabNavigator();
 
 const TabStackScreen = () => {
     return (
-        <TabStack.Navigator>
+        <TabStack.Navigator
+            screenOptions={({ route }) => ({
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName;
+                    if (route.name === 'Home') {
+                        iconName = 'home'
+                    } else if (route.name === 'Search') {
+                        iconName = 'search';
+                    } else if (route.name === 'Notifications') {
+                        iconName = 'bell';
+                    } else if (route.name === 'Messages') {
+                        iconName = 'envelope-open';
+                    }
+
+                    return <Icon type='FontAwesome' name={iconName} style={{ color: focused ? colors.main : color, fontSize: size }} />;
+                },
+            })}
+            tabBarOptions={{
+                inactiveTintColor: 'gray',
+                showLabel: false,
+            }}
+
+        >
+
             <TabStack.Screen name="Home" component={HomeStackScreen} />
             <TabStack.Screen name="Search" component={SearchStackScreen} />
             <TabStack.Screen name="Notifications" component={NotificationsStackScreen} />
             <TabStack.Screen name="Messages" component={MessagesStackScreen} />
+
+
         </TabStack.Navigator>
     )
 }
@@ -180,7 +212,13 @@ const TabStackScreen = () => {
 const DrawerStack = createDrawerNavigator();
 const DrawerStackScreen = () => {
     return (
-        <DrawerStack.Navigator>
+        <DrawerStack.Navigator
+            drawerContent={Menu}
+            drawerType='back'
+            drawerStyle={{
+                width: '85%',
+            }}
+        >
             <DrawerStack.Screen name="Drawer" component={TabStackScreen} />
         </DrawerStack.Navigator>
     )
@@ -193,16 +231,22 @@ const RootStack = createStackNavigator();
 function Router(props) {
     return (
         <NavigationContainer ref={navigationRef}>
-            <RootStack.Navigator headerMode='none'>
+            <RootStack.Navigator headerMode='none' mode="modal">
                 {
                     props.user ?
-                        (<RootStack.Screen
-                            name="Main"
-                            component={DrawerStackScreen}
-                            options={{
-                                animationEnabled: false
-                            }}
-                        />) :
+                        (
+                            <>
+                                <RootStack.Screen
+                                    name="Main"
+                                    component={DrawerStackScreen}
+                                    options={{
+                                        animationEnabled: false
+                                    }}
+                                />
+                                <RootStack.Screen name="AddTweet" component={AddTweet} />
+                            </>
+
+                        ) :
                         (<RootStack.Screen
                             name="Auth"
                             component={AuthStackScreen}

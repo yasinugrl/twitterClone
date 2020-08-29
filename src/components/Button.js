@@ -15,11 +15,11 @@ const Button = (props) => (
     }, props.style]}>
     {props.loading ?
       <ActivityIndicator size='small' color='white' /> :
-      <Text style={{
+      <Text style={[{
         color: 'white',
         fontWeight: 'bold',
         fontSize: 18
-      }}>{props.text}</Text>
+      }, props.textStyle]}>{props.text}</Text>
     }
   </TouchableOpacity>
 );

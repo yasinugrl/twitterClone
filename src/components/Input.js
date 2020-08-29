@@ -10,6 +10,7 @@ const Input = (props) => (
         keyboardType={props.keyboardType}
         multiline={props.multiline}
         value={props.value}
+        autoFocus={props.autoFocus}
         onChangeText={(value) => props.onChangeText(value)}
         style={[{
             padding: 5,

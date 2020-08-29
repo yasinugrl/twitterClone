@@ -44,7 +44,12 @@ export const login = (params) => {
                             .doc(uid)
                             .get().then((user) => {
                                 console.log('Gelen Data: ', user._data);
-                                dispatch({ type: LOGIN_SUCCESS, payload: user._data })
+
+                                const userParams = {
+                                    ...user._data,
+                                    uid
+                                }
+                                dispatch({ type: LOGIN_SUCCESS, payload: userParams })
 
 
                             }).catch((err) => {
@@ -149,7 +154,12 @@ const getUser = (uid, dispatch) => {
         .doc(uid)
         .get().then((user) => {
             console.log('Gelen Data: ', user._data);
-            dispatch({ type: LOGIN_SUCCESS, payload: user._data })
+            const userParams = {
+                ...user._data,
+                uid
+            }
+
+            dispatch({ type: LOGIN_SUCCESS, payload: userParams })
         }).catch((err) => {
             console.log('Read Data error: ', err);
             dispatch({ type: LOGIN_FAILD })
