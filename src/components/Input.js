@@ -11,6 +11,7 @@ const Input = (props) => (
         multiline={props.multiline}
         value={props.value}
         autoFocus={props.autoFocus}
+        maxLength={props.maxLength}
         onChangeText={(value) => props.onChangeText(value)}
         style={[{
             padding: 5,

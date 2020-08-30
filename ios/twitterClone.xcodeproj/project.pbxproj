@@ -64,7 +64,7 @@
 		00E356EE1AD99517003FC87E /* twitterCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twitterCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* twitterCloneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = twitterCloneTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* twitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = twitterClone/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = twitterClone/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = twitterClone/Images.xcassets; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* twitterClone.app */,
+				13B07F961A680F5B00A75B9A /* Twitter.app */,
 				00E356EE1AD99517003FC87E /* twitterCloneTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* twitterClone-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* twitterClone-tvOSTests.xctest */,
@@ -307,7 +307,7 @@
 			);
 			name = twitterClone;
 			productName = twitterClone;
-			productReference = 13B07F961A680F5B00A75B9A /* twitterClone.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Twitter.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* twitterClone-tvOS */ = {
@@ -767,7 +767,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twitterclone;
-				PRODUCT_NAME = twitterClone;
+				PRODUCT_NAME = Twitter;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -789,7 +789,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twitterclone;
-				PRODUCT_NAME = twitterClone;
+				PRODUCT_NAME = Twitter;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

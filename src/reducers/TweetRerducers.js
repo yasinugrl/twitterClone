@@ -18,14 +18,14 @@ const INITIAL_STATE = {
           return { ...state, loading: true
         };
         case ADD_TWEET_SUCCESS:
-            return { ...state, loading: false, tweets: [action.payload, ...state.tweets]
+            return { ...state, loading: false 
           };
           case ADD_TWEET_FAILD:
             return { ...state, loading: false
           };
 
           case GET_TWEET_SUCCESS:
-            return { ...state, loading: false, tweets: action.payload
+            return { ...state, tweets: action.payload
           };
 
     default:
