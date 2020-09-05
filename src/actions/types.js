@@ -50,6 +50,36 @@ export const GET_USER_TWEET_SUCCESS = 'get_user_tweet_success';
 export const GET_USER_TWEET_FAILD = 'get_user_tweet_faild';
 
 
+
+
+export const GET_MESSAGES_START = 'get_messages_start';
+export const GET_MESSAGES_SUCCESS = 'get_messages_success';
+export const GET_MESSAGES_FAILD = 'get_messages_faild';
+
+
+export const ADD_MESSAGES_START = 'add_messages_start';
+export const ADD_MESSAGES_SUCCESS = 'add_messages_success';
+export const ADD_MESSAGES_FAILD = 'add_messages_faild';
+
+
+
+
+export const GET_ROOM_START = 'get_room_start';
+export const GET_ROOM_SUCCESS = 'get_room_success';
+export const GET_ROOM_FAILD = 'get_room_faild';
+
+
+export const ADD_ROOM_START = 'add_room_start';
+export const ADD_ROOM_SUCCESS = 'add_room_success';
+export const ADD_ROOM_FAILD = 'add_room_faild';
+
+
+
+export const GET_ALL_USER_START = 'get_all_user_start';
+export const GET_ALL_USER_SUCCESS = 'get_all_user_success';
+export const GET_ALL_USER_FAILD = 'get_all_user_faild';
+
+
 export const LOCAL_AUTH_ID = 'local_auth_id';
 
 

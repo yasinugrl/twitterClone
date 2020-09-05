@@ -29,6 +29,7 @@ import NotificationsDetail from './screens/Notifications/NotificationsDetail'
 
 import MessagesScreen from './screens/Messages/Messages'
 import MessageDetail from './screens/Messages/MessageDetail'
+import GetUsers from './screens/Messages/GetUsers'
 
 
 import Menu from './screens/Menu/Menu'
@@ -166,6 +167,8 @@ const MessagesStackScreen = () => {
                 })}
             />
             <MessagesStack.Screen name="MessageDetail" component={MessageDetail} />
+
+            <MessagesStack.Screen name="GetUsers" component={GetUsers} />
         </MessagesStack.Navigator>
     )
 }
