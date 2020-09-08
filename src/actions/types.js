@@ -84,5 +84,6 @@ export const LOCAL_AUTH_ID = 'local_auth_id';
 
 
 export const USER = {
-    token: null
+    token: null,
+    notif: null
 };

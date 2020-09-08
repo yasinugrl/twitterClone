@@ -91,6 +91,7 @@ export const addMessages = (path,params) => {
             .add(params)
             .then((data) => {
                 console.log('MEssage send!', data);
+                
                 dispatch({ type: ADD_MESSAGES_SUCCESS })
 
             }).catch(() => {

@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
 import { View, Text, FlatList, Image, ActivityIndicator, Alert } from 'react-native';
 import { connect } from 'react-redux';
+
 import { Fab, Icon } from 'native-base';
 import { colors } from '../../style';
 
 import { getRooms } from '../../actions'
 
 import MessageItems from './MessageItems';
+import { USER } from '../../actions/types';
 
 const Messages = (props) => {
 
     useEffect(() => {
         props.getRooms()
+        console.log('Gelen props.', USER.notif);
+
+        USER.notif ? props.navigation.navigate('MessageDetail', { data: { path: USER.notif.path } } ) : null
     }, [])
 
     return (
